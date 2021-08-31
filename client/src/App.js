@@ -1,0 +1,85 @@
+import React,{useEffect,createContext, useReducer,useContext} from 'react'
+import './App.css';
+import NavBar from './components/navbar';
+import Home from './components/screens/home'
+import Profile from './components/screens/profile'
+import Signin from './components/screens/Signin'
+import Signup from './components/screens/signup'
+import Signup2 from './components/screens/tenantsignup'
+import Signin2 from './components/screens/tenantsignin'
+import MyHome from './components/screens/myhome'
+import CreatePost from './components/screens/createpost'
+import { BrowserRouter,Route, Switch,useHistory} from 'react-router-dom';
+import {reducer,initialState} from './reducers/userReducer'
+import UserProfile from './components/screens/UserProfile'
+export const UserContext = createContext()
+const Routing = () => {
+  const history = useHistory()
+  const {state,dispatch} = useContext(UserContext)
+  useEffect(()=>{
+
+     const user = JSON.parse(localStorage.getItem("user"))
+     console.log(user )
+     if(user){
+       dispatch({type:"USER",payload:user})
+       
+     }
+     else {
+       history.push('/')
+     }
+  },[])
+  return (
+    <Switch>
+<Route exact path='/'>
+      <Home />
+    </Route>
+    <Route path='/signin'>
+      <Signin />
+      </Route>
+    <Route path='/pgsignin'>
+      <Signin2 />
+
+    </Route>
+    <Route path='/signup'>
+      <Signup />
+    </Route>
+    <Route path='/pgsignup'>
+    <Signup2 />
+     </Route>
+    
+    <Route exact path='/profile'>
+      <Profile />
+      </Route>
+    <Route path='/myhome'>
+      <MyHome />
+    </Route>
+    <Route path='/createpost'>
+      <CreatePost />
+    </Route>
+    <Route path='/profile/:userid'>
+    <UserProfile />
+    </Route>
+    </Switch>
+  )
+}
+
+
+function App() {
+  const [state,dispatch] = useReducer(reducer,initialState)
+  return (
+    <UserContext.Provider value={{state,dispatch}}> 
+    <BrowserRouter>
+    <NavBar />
+    <Routing />
+  
+    </BrowserRouter>
+    </UserContext.Provider>
+  )
+  
+    
+  
+  
+  
+}
+
+export default App;

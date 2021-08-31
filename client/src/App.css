@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&family=Nunito:wght@300&display=swap');
+html {
+
+  background: #C6FFDD;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #f7797d, #FBD786, #C6FFDD);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: cover;   
+  
+
+}
+body.profilestructure {
+  background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(116,161,214,1) 100%);
+margin: 40px auto;
+  
+}
+
+  
+  
+
+
+nav {
+  background-color: lightsalmon !important;
+}
+ .brand-logo {
+  font-family:  'Raleway', sans-serif  !important;
+  display: block;
+  padding-left: 5px !important;
+  text-shadow: 2px 2px 5px lightslategray;
+  z-index: 2;
+  
+      
+}
+nav ul a{
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: bold;
+  font-size: large !important;
+  text-shadow: 2px 2px 5px lightslategray;
+  z-index: 2;
+
+}
+
+.homepage p {
+  text-align: center;
+  font-size: 35px;
+  font-family: 'Nunito', sans-serif;
+  display: block;
+  background-color: lightsalmon;
+  padding: 1%;
+  z-index: 2;
+  
+
+}
+.signin {
+  text-align: center !important;
+  margin: auto;
+  z-index: 2;
+}
+ .row::after{
+  margin-left: 20% !important;
+  display: none !important;
+  position: relative;
+  z-index: 2;
+}
+.row .col.m4 {
+  width: 45% !important;
+  margin: 0;
+  z-index: 2;
+}
+.signin .row .col.m4 {
+  margin-left: 1rem;
+  z-index: 2;
+}
+.signin2 .row .col.m4 {
+  margin-left: 7rem;
+  z-index: 2;
+}
+button .btn {
+  padding-left: 5rem !important;
+  padding-right: 5rem !important;
+  z-index: 2;
+}
+h5 a{
+  color: lightpink;
+  font-size: medium;
+  z-index: 2;
+}
+ .homelink a {
+   color: oldlace;
+   z-index: 2;
+   
+}
+
+.collection-item {
+  width: 100%;
+}
+
+.gallery {
+  display: table-header-group;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow: hidden !important;
+  
+  
+  
+}
+
+.item {
+  width: 30%;
+  height: 30%;
+  justify-content: space-between;
+  margin: 5px 10px;
+
+  
+  
+  
+}
+
+
+ .home-card {
+   max-width: 500px;
+   max-height: max-content;
+   margin: 26px auto; 
+
+}
+
+#toast-container {
+  top: 20px !important;
+  left: 30px !important;
+  right: auto !important;
+}
+
+
+@media only screen and (max-width:992px) {
+  .brand-logo {
+  display: inline-block;
+  left: 12% !important;
+  text-align: justify;
+  font-size: medium !important;
+  font-weight: bolder;
+  overflow: hidden;
+  
+  
+  
+  }
+  .homepage p {
+    font-size: medium;
+    font-weight: bold;
+    
+  }
+}
